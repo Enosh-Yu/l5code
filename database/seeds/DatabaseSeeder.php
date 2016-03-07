@@ -83,7 +83,7 @@ class DatabaseSeeder extends Seeder
 
         $this->command->error('Downloading images from lorempixel. It takes time...');
 
-        $articles->each(function($article) use ($faker) {
+        $articles->each(function ($article) use ($faker) {
             $path = $faker->image(attachments_path());
             $filename = File::basename($path);
             $bytes = File::size($path);
@@ -113,7 +113,7 @@ class DatabaseSeeder extends Seeder
         $this->command->info('Seeded: attachments table and files');
 
         /* Comments */
-        $articles->each(function($article) {
+        $articles->each(function ($article) {
             $article->comments()->save(factory(App\Comment::class)->make());
             $article->comments()->save(factory(App\Comment::class)->make(
                 ['deleted_at' => Carbon\Carbon::now()->toDateTimeString()]
@@ -121,7 +121,7 @@ class DatabaseSeeder extends Seeder
         });
 
         // Children comments
-        $articles->each(function($article) use ($faker){
+        $articles->each(function ($article) use ($faker){
             $commentIds = App\Comment::pluck('id')->toArray();
 
             foreach(range(1,5) as $index) {
@@ -141,7 +141,7 @@ class DatabaseSeeder extends Seeder
         /* Vote */
         $comments = App\Comment::all();
 
-        $comments->each(function($comment) {
+        $comments->each(function ($comment) {
             $comment->votes()->save(factory(App\Vote::class)->make());
             $comment->votes()->save(factory(App\Vote::class)->make());
             $comment->votes()->save(factory(App\Vote::class)->make());

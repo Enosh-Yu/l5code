@@ -49,7 +49,7 @@ class Controller extends BaseController
             return $query->{$method}($args);
         }
 
-        return $this->cache->remember($key, $minutes, function() use($query, $method, $args) {
+        return $this->cache->remember($key, $minutes, function () use($query, $method, $args) {
             return $query->{$method}($args);
         });
     }

@@ -25,8 +25,8 @@ class AppServiceProvider extends ServiceProvider
 
         \Carbon\Carbon::setLocale(app()->getLocale());
 
-        view()->composer('*', function($view) {
-            $allTags = \Cache::rememberForever('tags.list', function() {
+        view()->composer('*', function ($view) {
+            $allTags = \Cache::rememberForever('tags.list', function () {
                 return \App\Tag::all();
             });
             $currentUser = auth()->user();

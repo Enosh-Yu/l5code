@@ -32,11 +32,11 @@ class AuthServiceProvider extends ServiceProvider
             }
         });
 
-        $gate->define('update', function($user, $model) {
+        $gate->define('update', function ($user, $model) {
             return $user->id === $model->user_id;
         });
 
-        $gate->define('delete', function($user, $model) {
+        $gate->define('delete', function ($user, $model) {
             return $user->id === $model->user_id;
         });
     }

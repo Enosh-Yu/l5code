@@ -103,7 +103,7 @@ if (! function_exists('link_for_sort')) {
         }
 
         $queryString = http_build_query(array_merge(
-            request()->except(['page', 'sort', 'order']),
+            request()->except(['sort', 'order']),
             ['sort' => $column, 'order' => $reverse],
             $params
         ));
