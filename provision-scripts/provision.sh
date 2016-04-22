@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# This script references
+# This script references the following script.
 # https://github.com/laravel/settler/blob/master/scripts/provision.sh
 #
 #--------------------------------------------------------------------------

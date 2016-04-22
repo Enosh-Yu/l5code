@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c284a9c122da36c99a8b6597bdce7aa6",
-    "content-hash": "8b1485987e7c5949da82435d403e52e8",
+    "hash": "db1a953e9f5c85c985cafc3dea7d728a",
+    "content-hash": "95cad6b87e7b02d1769cc291199434e0",
     "packages": [
         {
             "name": "appkr/api",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/appkr/api.git",
-                "reference": "4c6fc1011f35e89b0e52d257bcac6f975a91b02a"
+                "reference": "a51f1a5a599de59143e0bb88d1eaac29abdbd80a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/appkr/api/zipball/4c6fc1011f35e89b0e52d257bcac6f975a91b02a",
-                "reference": "4c6fc1011f35e89b0e52d257bcac6f975a91b02a",
+                "url": "https://api.github.com/repos/appkr/api/zipball/9ef92a3be0a5cbdf43217cbc3d75ac3cdb7ba642",
+                "reference": "a51f1a5a599de59143e0bb88d1eaac29abdbd80a",
                 "shasum": ""
             },
             "require": {
@@ -55,16 +55,17 @@
             ],
             "authors": [
                 {
-                    "name": "Appkr",
+                    "name": "appkr",
                     "email": "juwonkim@me.com"
                 }
             ],
             "description": "RESTful HTTP API dev tool for Laravel or Lumen based project",
             "keywords": [
+                "RESTful API",
                 "fractal",
                 "laravel"
             ],
-            "time": "2016-03-30 17:09:14"
+            "time": "2016-04-23 13:52:30"
         },
         {
             "name": "barryvdh/laravel-cors",
