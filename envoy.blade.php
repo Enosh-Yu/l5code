@@ -46,9 +46,9 @@
 
   ln -nfs {{ $release_dir }}/{{ $distname }} {{ $project_root }};
 
-  chmod -R 777 {{ $shared_dir }}/storage;
-  chmod -R 777 {{ $shared_dir }}/cache;
-  chmod -R 777 {{ $shared_dir }}/files;
+  chmod -R 775 {{ $shared_dir }}/storage;
+  chmod -R 775 {{ $shared_dir }}/cache;
+  chmod -R 775 {{ $shared_dir }}/files;
   chgrp -h -R www-data {{ $release_dir }}/{{ $distname }};
 
   sudo service nginx restart;

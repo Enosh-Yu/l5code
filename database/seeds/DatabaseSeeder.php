@@ -80,6 +80,7 @@ class DatabaseSeeder extends Seeder
         }
 
         File::cleanDirectory(attachments_path());
+        File::put(attachments_path('.gitignore'), "*\n!.gitignore");
 
         $this->command->error('Downloading images from lorempixel. It takes time...');
 
