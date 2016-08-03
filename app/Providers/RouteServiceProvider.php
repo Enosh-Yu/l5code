@@ -46,9 +46,8 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map(Router $router)
     {
+        $this->mapApiRoutes($router);
         $this->mapWebRoutes($router);
-
-        //
     }
 
     /**
@@ -65,6 +64,22 @@ class RouteServiceProvider extends ServiceProvider
             'namespace' => $this->namespace, 'middleware' => 'web',
         ], function ($router) {
             require app_path('Http/routes.php');
+        });
+    }
+
+    /**
+     * Define the "api" routes for the application.
+     *
+     * @see https://laracasts.com/discuss/channels/laravel/just-use-the-web-middleware-by-default#reply-151218
+     * @param  \Illuminate\Routing\Router  $router
+     * @return void
+     */
+    protected function mapApiRoutes(Router $router)
+    {
+        $router->group([
+            'namespace' => $this->namespace, 'middleware' => 'api',
+        ], function ($router) {
+            require app_path('Http/routes-api.php');
         });
     }
 }
