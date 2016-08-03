@@ -23,7 +23,7 @@ class CommentsController extends ParentController
      */
     public function index(\App\Article $article)
     {
-        return json()->withPagination(
+        return json()->withCollection(
             $article->comments,
             new \App\Transformers\CommentTransformer
         );
