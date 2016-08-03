@@ -26,7 +26,7 @@ class AttachmentTransformer extends TransformerAbstract
                 [
                     'rel' => 'self',
                     'href' => url(sprintf(
-                        '%s/attachments/%s',
+                        '%s/files/%s',
                         config('project.url'), $attachment->filename
                     )),
                 ],

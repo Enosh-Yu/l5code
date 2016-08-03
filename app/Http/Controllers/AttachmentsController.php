@@ -11,7 +11,25 @@ class AttachmentsController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['index']]);
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show($file)
+    {
+        $path = attachments_path($file);
+
+        if (! \File::exists($path)) {
+            abort(404);
+        }
+
+        $image = \Image::make($path);
+
+        return response($image->encode('png'), 200, [
+            'Content-Type' => 'image/png'
+        ]);
     }
 
     /**
