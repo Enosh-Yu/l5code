@@ -16,6 +16,11 @@ class UsersTableSeeder extends Seeder
             'email' => 'john@example.com',
             'activated' => 1
         ]);
+        factory(App\User::class)->create([
+            'name' => 'Foo',
+            'email' => 'foo@example.com',
+            'activated' => 1
+        ]);
         factory(App\User::class, 5)->create();
     }
 }

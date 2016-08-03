@@ -148,6 +148,8 @@ class ArticlesController extends Controller implements Cacheable
      */
     public function update(\App\Http\Requests\ArticlesRequest $request, \App\Article $article)
     {
+        $this->authorize('update', $article);
+
         $payload = array_merge($request->all(), [
             'notification' => $request->has('notification'),
         ]);
